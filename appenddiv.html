@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+		<title>getElementByTagname</title>
+</head>
+
+<body onload="intervalAppend()" onclick="intervalClear()">
+	<script type="text/javascript">
+		var timer;
+	
+		function intervalAppend()
+		{ /* after every 1 sec call appendPara() */
+
+         timer= setInterval(appendPara, 1000);
+
+		} 
+		function intervalClear()
+		{
+				clearInterval(timer);
+		}
+		function appendPara(){
+			var v=document.createElement("img"); /* create a new para */
+			 			   /* add text to para */
+			v.style.width="200px";
+			v.style.height="200px";
+			v.style.margin="10px";
+			var r= Math.floor(Math.random()*10+1);
+			if(r<5)
+			v.src="kitten1.jpg"
+		    else
+		    v.src="kitten2.jpg"
+			var d=document.getElementById("div1"); /* get the div where you want to add this para */
+			d.appendChild(v); 					/* add para to the div */
+			
+		}
+	</script>
+
+<div  id="div1"> 
+		<p> Para </p>
+</div>
+
+</body>
+</html>
